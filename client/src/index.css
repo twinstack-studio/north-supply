@@ -1,0 +1,148 @@
+@import 'tailwindcss';
+
+/* --------------------------------------------------------------------------
+   NORTH SUPPLY design tokens.
+   High-contrast monochrome with a single blaze accent -- the palette commits
+   to one look rather than shipping a half-considered dark mode.
+   ----------------------------------------------------------------------- */
+@theme {
+  --color-ink: #0b0b0c;
+  --color-ink-soft: #1c1c1f;
+  --color-paper: #faf9f7;
+  --color-paper-warm: #f1efea;
+  --color-line: #e2ded7;
+  --color-line-strong: #cbc5ba;
+  --color-muted: #75726c;
+  --color-blaze: #ff4a1c;
+  --color-blaze-dark: #d93a11;
+  --color-sale: #b3261e;
+  --color-success: #1f7a4d;
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-none: 0px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* A visible focus ring everywhere -- the brand is square, so is the ring. */
+  :focus-visible {
+    outline: 2px solid var(--color-blaze);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
+}
+
+/* Registered as a utility, not a component class: Tailwind v4 only lets
+   @apply reference utilities, and the .btn-* variants below build on this. */
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 text-[13px]
+         font-bold uppercase tracking-[0.14em] transition-colors duration-150
+         disabled:cursor-not-allowed disabled:opacity-40;
+}
+
+@layer components {
+  /* Display lockup: tight, heavy, uppercase. Used for section headers. */
+  .display {
+    @apply font-extrabold uppercase leading-[0.92] tracking-[-0.035em];
+  }
+
+  .eyebrow {
+    @apply text-[11px] font-bold uppercase tracking-[0.22em] text-muted;
+  }
+
+  .btn-primary {
+    @apply btn bg-ink text-paper hover:bg-blaze;
+  }
+  .btn-outline {
+    @apply btn border border-ink bg-transparent text-ink hover:bg-ink hover:text-paper;
+  }
+  .btn-ghost {
+    @apply btn border border-line bg-transparent text-ink hover:border-ink;
+  }
+  .btn-sm {
+    @apply px-4 py-2 text-[11px] tracking-[0.12em];
+  }
+
+  .field {
+    @apply w-full border border-line-strong bg-white px-4 py-3 text-[15px] text-ink
+           placeholder:text-muted/70 focus:border-ink focus:outline-none;
+  }
+  .field-error {
+    @apply border-sale;
+  }
+  .label {
+    @apply mb-1.5 block text-[11px] font-bold uppercase tracking-[0.16em] text-muted;
+  }
+  .error-text {
+    @apply mt-1 text-[12px] font-medium text-sale;
+  }
+
+  .card {
+    @apply border border-line bg-white;
+  }
+
+  .shell {
+    @apply mx-auto w-full max-w-[1360px] px-5 sm:px-8;
+  }
+
+  /* Chip used for filters, sizes, and status pills. */
+  .chip {
+    @apply inline-flex items-center border border-line-strong bg-white px-3 py-1.5
+           text-[11px] font-bold uppercase tracking-[0.12em] transition-colors;
+  }
+  .chip-active {
+    @apply border-ink bg-ink text-paper;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  @keyframes ns-rise {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .animate-rise {
+    animation: ns-rise 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @keyframes ns-marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: ns-marquee 28s linear infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
