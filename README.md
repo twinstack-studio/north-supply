@@ -4,6 +4,10 @@ A complete PERN (PostgreSQL · Express · React · Node) storefront for a modern
 unisex streetwear label — customer shop, accounts, checkout, and a full admin
 back office.
 
+## Preview
+
+![NORTH SUPPLY storefront](./north-supply-homepage.png)
+
 > **Payments are simulated.** Cards are validated (Luhn + expiry) and only the
 > brand and last four digits are stored. Nothing is charged, and no PAN ever
 > reaches the database. See "Going live" below for the Stripe swap.
