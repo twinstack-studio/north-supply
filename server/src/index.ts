@@ -18,6 +18,8 @@ import { productRouter } from './routes/product.routes.js';
 import { returnRouter } from './routes/return.routes.js';
 import { reviewRouter } from './routes/review.routes.js';
 import { wishlistRouter } from './routes/wishlist.routes.js';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const app = express();
 
@@ -75,6 +77,21 @@ app.use('/api/coupons', couponRouter);
 app.use('/api/newsletter', newsletterRouter);
 app.use('/api/admin', adminRouter);
 app.use('/api/images', imageRouter);
+
+if (env.isProd) {
+  const currentDirectory = dirname(fileURLToPath(import.meta.url));
+  const clientDirectory = resolve(currentDirectory, '../../client/dist');
+
+  app.use(express.static(clientDirectory));
+
+  app.get('*', (req, res, next) => {
+    if (req.path.startsWith('/api/')) {
+      return next();
+    }
+
+    return res.sendFile(resolve(clientDirectory, 'index.html'));
+  });
+}
 
 app.use(notFoundHandler);
 app.use(errorHandler);
