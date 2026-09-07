@@ -387,3 +387,9 @@ This is a demo build. Before it handles real money or real customers:
    `images.unsplash.com` for `img-src` — update it when the host changes.
 6. **Rate limiting.** Only the auth routes are rate-limited today; extend it to
    checkout and review posting.
+
+## Built By
+
+Developed and maintained by [TwinStack Studio](https://github.com/twinstack-studio).
+
+For project inquiries: hello.twinstackstudio@gmail.com
