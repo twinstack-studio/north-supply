@@ -12,6 +12,12 @@ back office.
 > brand and last four digits are stored. Nothing is charged, and no PAN ever
 > reaches the database. See "Going live" below for the Stripe swap.
 
+## Live Demo
+
+[Open NORTH SUPPLY](https://north-supply.onrender.com/)
+
+> The demo uses simulated payments. No real payment is processed.
+
 ---
 
 ## Quick start
