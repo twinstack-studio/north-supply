@@ -11,7 +11,7 @@ retail team needs to manage products, orders, customers, promotions, and returns
 [**Open the live storefront**](https://north-supply.onrender.com/) ·
 [**Work with TwinStack Studio**](mailto:hello.twinstackstudio@gmail.com)
 
-![NORTH SUPPLY storefront](./north-supply-homepage.png)
+![NORTH SUPPLY storefront](./assets/north-supply-homepage.png)
 
 > **Portfolio demo:** Payments are simulated. No real card is charged, and the
 > application stores only the card brand and last four digits.
@@ -53,8 +53,8 @@ without an email OTP.
 
 | Layer | Stack |
 | --- | --- |
-| Frontend | React 18, TypeScript, Vite, Tailwind CSS |
-| Backend | Node.js, Express, TypeScript, Zod |
+| Frontend | React 19, React Router 7, TypeScript, Vite, Tailwind CSS 4 |
+| Backend | Node.js 20+, Express 5, TypeScript, Zod 4 |
 | Data | PostgreSQL, transactional SQL |
 | Authentication | JWT in HTTP-only cookies, bcrypt, optional email OTP and Google sign-in |
 | Quality | Node test runner, TypeScript builds, GitHub Actions, Dependabot |
