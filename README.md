@@ -1,7 +1,7 @@
 # NORTH SUPPLY
 
 [![CI](https://github.com/twinstack-studio/north-supply/actions/workflows/ci.yml/badge.svg)](https://github.com/twinstack-studio/north-supply/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-f4511e.svg)](./LICENSE)
+[![License: All rights reserved](https://img.shields.io/badge/License-All_rights_reserved-f4511e.svg)](./LICENSE)
 [![Live Demo](https://img.shields.io/badge/Live_Demo-Open_Store-f4511e.svg)](https://north-supply.onrender.com/)
 
 A production-minded e-commerce experience for a modern streetwear brand. NORTH
@@ -110,4 +110,4 @@ portals, automation, and AI-powered products.
 [Website](https://twinstackstudio.com) ·
 [Email](mailto:hello.twinstackstudio@gmail.com)
 
-Licensed under the [MIT License](./LICENSE).
+© 2026 TwinStack Studio. All rights reserved. See [LICENSE](./LICENSE).
