@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 // .env against the working directory, so starting the server from the repo
 // root silently loaded no configuration at all -- falling back to the
 // development JWT secret and no mail transport, with nothing to indicate it.
-config({ path: resolve(dirname(fileURLToPath(import.meta.url)), '../../.env') });
+config({ path: resolve(dirname(fileURLToPath(import.meta.url)), '../../.env'), quiet: true });
 
 function required(name: string, fallback?: string): string {
   const value = process.env[name] ?? fallback;

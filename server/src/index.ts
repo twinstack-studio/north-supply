@@ -84,7 +84,7 @@ if (env.isProd) {
 
   app.use(express.static(clientDirectory));
 
-  app.get('*', (req, res, next) => {
+  app.get('/{*splat}', (req, res, next) => {
     if (req.path.startsWith('/api/')) {
       return next();
     }
