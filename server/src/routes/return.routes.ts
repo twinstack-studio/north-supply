@@ -132,7 +132,7 @@ returnRouter.get(
   optionalAuth,
   asyncHandler(async (req: AuthedRequest, res) => {
     const email = typeof req.query.email === 'string' ? req.query.email : undefined;
-    const order = await loadAccessibleOrder(req.params.orderNumber, req, email);
+    const order = await loadAccessibleOrder(req.params.orderNumber as string, req, email);
     res.json({
       orderNumber: order.order_number,
       ...(await buildEligibility(order.id, order.status, order.placed_at)),

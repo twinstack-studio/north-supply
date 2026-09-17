@@ -20,7 +20,7 @@
     "mail:test": "npm run mail:test --workspace server --"
   },
   "devDependencies": {
-    "concurrently": "^9.1.2"
+    "concurrently": "^10.0.5"
   },
   "engines": {
     "node": ">=20"

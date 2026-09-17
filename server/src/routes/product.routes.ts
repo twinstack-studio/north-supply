@@ -163,7 +163,7 @@ productRouter.get(
 productRouter.get(
   '/:slug',
   asyncHandler(async (req, res) => {
-    const product = await findProductBySlug(req.params.slug);
+    const product = await findProductBySlug(req.params.slug as string);
     if (!product || !product.isActive) throw notFound('That product is no longer available.');
     res.json({ product });
   }),
@@ -173,7 +173,7 @@ productRouter.get(
 productRouter.get(
   '/:slug/related',
   asyncHandler(async (req, res) => {
-    const product = await findProductBySlug(req.params.slug);
+    const product = await findProductBySlug(req.params.slug as string);
     if (!product) throw notFound('That product is no longer available.');
 
     const { rows } = await query<ProductRow>(
