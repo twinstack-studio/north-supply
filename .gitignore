@@ -10,3 +10,4 @@ coverage/
 .vite/
 .mail-outbox/
 .mail-outbox
+*.tsbuildinfo
