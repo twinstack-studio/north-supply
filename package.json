@@ -3,6 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "description": "NORTH SUPPLY - PERN full-stack streetwear store",
+  "license": "UNLICENSED",
   "workspaces": [
     "server",
     "client"
