@@ -405,7 +405,7 @@ authRouter.get(
     const { rows } = await query(
       `SELECT 1 FROM password_resets
        WHERE token_hash = $1 AND used_at IS NULL AND expires_at > now()`,
-      [hashToken(req.params.token)],
+      [hashToken(req.params.token as string)],
     );
     res.json({ valid: rows.length > 0 });
   }),
