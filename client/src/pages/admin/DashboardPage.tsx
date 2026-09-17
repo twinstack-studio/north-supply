@@ -67,16 +67,19 @@ export function DashboardPage() {
         <h2 className="eyebrow mb-6">Revenue — last 14 days</h2>
         <div className="flex h-52 items-end gap-1.5">
           {stats.daily.map((day) => (
-            <div key={day.day} className="group flex flex-1 flex-col items-center justify-end gap-2">
+            <div key={day.day} className="group flex h-full flex-1 flex-col items-center justify-end gap-2">
               <span className="text-[10px] font-bold tabular-nums opacity-0 transition-opacity group-hover:opacity-100">
                 {money(day.revenue)}
               </span>
-              <div
-                className="w-full bg-ink transition-colors group-hover:bg-blaze"
-                /* A 1% floor keeps zero-revenue days visible as a baseline tick. */
-                style={{ height: `${Math.max((day.revenue / peak) * 100, 1)}%` }}
-                title={`${dateShort(day.day)} — ${money(day.revenue)} across ${day.orders} orders`}
-              />
+              {/* Percentage heights need a parent with a definite height; this track provides it. */}
+              <div className="flex min-h-0 w-full flex-1 items-end">
+                <div
+                  className="w-full bg-ink transition-colors group-hover:bg-blaze"
+                  /* A 1% floor keeps zero-revenue days visible as a baseline tick. */
+                  style={{ height: `${Math.max((day.revenue / peak) * 100, 1)}%` }}
+                  title={`${dateShort(day.day)} — ${money(day.revenue)} across ${day.orders} orders`}
+                />
+              </div>
               <span className="text-[10px] text-muted">{new Date(day.day).getDate()}</span>
             </div>
           ))}
