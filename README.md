@@ -9,7 +9,7 @@ SUPPLY combines a polished customer storefront with the operational tools a
 retail team needs to manage products, orders, customers, promotions, and returns.
 
 [**Open the live storefront**](https://north-supply.onrender.com/) ·
-[**Work with TwinStack Studio**](mailto:hello.twinstackstudio@gmail.com)
+[**Work with TwinStack Studio**](https://twinstackstudio.com/contact)
 
 ![NORTH SUPPLY storefront](./assets/north-supply-homepage.png)
 
@@ -108,6 +108,6 @@ portals, automation, and AI-powered products.
 
 [GitHub](https://github.com/twinstack-studio) ·
 [Website](https://twinstackstudio.com) ·
-[Email](mailto:hello.twinstackstudio@gmail.com)
+[Email](mailto:hello@twinstackstudio.com)
 
 © 2026 TwinStack Studio. All rights reserved. See [LICENSE](./LICENSE).
