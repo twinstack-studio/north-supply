@@ -2,13 +2,13 @@
 
 [![CI](https://github.com/twinstack-studio/north-supply/actions/workflows/ci.yml/badge.svg)](https://github.com/twinstack-studio/north-supply/actions/workflows/ci.yml)
 [![License: All rights reserved](https://img.shields.io/badge/License-All_rights_reserved-f4511e.svg)](./LICENSE)
-[![Live Demo](https://img.shields.io/badge/Live_Demo-Open_Store-f4511e.svg)](https://north-supply.onrender.com/)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Open_Store-f4511e.svg)](https://northsupply.twinstackstudio.com)
 
 A production-minded e-commerce experience for a modern streetwear brand. NORTH
 SUPPLY combines a polished customer storefront with the operational tools a
 retail team needs to manage products, orders, customers, promotions, and returns.
 
-[**Open the live storefront**](https://north-supply.onrender.com/) ·
+[**Open the live storefront**](https://northsupply.twinstackstudio.com) ·
 [**Work with TwinStack Studio**](https://twinstackstudio.com/contact)
 
 ![NORTH SUPPLY storefront](./assets/north-supply-homepage.png)
