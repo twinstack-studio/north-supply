@@ -1,0 +1,92 @@
+# NORTH SUPPLY
+
+[![License: All rights reserved](https://img.shields.io/badge/License-All_rights_reserved-f4511e.svg)](./LICENSE)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Open_Store-f4511e.svg)](https://northsupply.twinstackstudio.com)
+
+A production-minded e-commerce experience for a modern streetwear brand. NORTH
+SUPPLY combines a polished customer storefront with the operational tools a
+retail team needs to manage products, orders, customers, promotions, and returns.
+
+[**Open the live storefront**](https://northsupply.twinstackstudio.com) ·
+[**Work with TwinStack Studio**](https://twinstackstudio.com/contact)
+
+![NORTH SUPPLY storefront](./assets/north-supply-homepage.png)
+
+> **Portfolio demo:** Payments are simulated. No real card is charged, and the
+> application stores only the card brand and last four digits.
+
+## What the product delivers
+
+### Customer experience
+
+- Responsive catalogue with search, filters, sorting, pagination, and shareable URLs
+- Product galleries, variants, live stock visibility, reviews, wishlist, and persistent cart
+- Server-priced checkout with delivery options, promo codes, and saved addresses
+- Account management, order history, guest tracking, returns, email OTP, and password reset
+
+### Retail operations
+
+- Admin dashboard for revenue, orders, customers, and inventory health
+- Product and variant management with stock, visibility, and featured controls
+- Order fulfilment, customer insights, promotion management, and return workflows
+
+### Engineering highlights
+
+- Server-authoritative pricing and transactional stock checks prevent cart tampering and overselling
+- HTTP-only cookie authentication, rate-limited auth routes, and validated request payloads
+- Responsive React interface backed by an Express and PostgreSQL API
+- Automated unit tests and GitHub Actions CI for every push and pull request
+
+## Demo access
+
+Use the customer account shown on the sign-in screen:
+
+- Email: `jordan@example.com`
+- Password: `password123`
+
+This account contains seeded, disposable demo data. Admin credentials are not
+published. The live deployment currently accepts the customer credentials
+without an email OTP.
+
+## Technology
+
+| Layer | Stack |
+| --- | --- |
+| Frontend | React 19, React Router 7, TypeScript, Vite, Tailwind CSS 4 |
+| Backend | Node.js 20+, Express 5, TypeScript, Zod 4 |
+| Data | PostgreSQL, transactional SQL |
+| Authentication | JWT in HTTP-only cookies, bcrypt, optional email OTP and Google sign-in |
+| Quality | Node test runner, TypeScript builds, GitHub Actions, Dependabot |
+
+## Production note
+
+This repository is a portfolio-grade demo. Before handling real customers or
+payments, integrate a payment provider and webhooks, use incremental database
+migrations, move product media to an owned CDN, configure transactional email,
+and extend rate limiting to checkout and user-generated content.
+
+## Architecture
+
+```mermaid
+flowchart LR
+  C[Customer browser<br/>React 19 storefront] -->|HTTPS + HTTP-only cookie| API
+  A[Admin dashboard<br/>React 19] -->|HTTPS| API
+  API[Express 5 API<br/>Zod validation · JWT · rate limits] --> P[(PostgreSQL<br/>transactional stock + orders)]
+  API -.optional.-> M[SMTP<br/>email OTP]
+  API -.optional.-> G[Google sign-in]
+```
+
+## Source code
+
+This is the public showcase. The source code is kept in a private repository. Try the live demo above, and [contact TwinStack Studio](https://twinstackstudio.com/contact) for a walkthrough or a similar project.
+
+## Built by TwinStack Studio
+
+TwinStack Studio builds full-stack websites, web applications, dashboards,
+portals, automation, and AI-powered products.
+
+[GitHub](https://github.com/twinstack-studio) ·
+[Website](https://twinstackstudio.com) ·
+[Email](mailto:hello@twinstackstudio.com)
+
+© 2026 TwinStack Studio. All rights reserved. See [LICENSE](./LICENSE).
